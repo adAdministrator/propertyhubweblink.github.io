@@ -1,34 +1,64 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+
+import AvatarDark from "./assets/avatar.png"
+import AvatarLight from "./assets/avatar-light.png"
+
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [avatar, setAvatar] = useState(AvatarDark)
+  
+  function handleSwitchThemeMode() {
+    document.documentElement.classList.toggle("light")
+    setAvatar((actualAvatar) => {
+      return actualAvatar === AvatarDark ? AvatarLight : AvatarDark
+    })
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+    <div className="App">
+      <div id="profile">
+        <img
+          src={avatar}
+          alt="****************"
+        />
+        <p>@poveii</p>
+      </div>
+
+      <div id="switch" onClick={handleSwitchThemeMode}>
+        <button></button>
+        <span></span>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+
+      <div id="social-links">
+        <a href="https://github.***">
+          <ion-icon name="logo-github"></ion-icon>
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://www.instagram.com/****">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="#">
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/****">
+          <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
   )
 }
 
