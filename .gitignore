@@ -7,6 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+package-lock.json
+package.json
+yarn.lock
+style.css
+script.js
 index.html
 node_modules
 dist
