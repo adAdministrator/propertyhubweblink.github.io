@@ -36,9 +36,9 @@ body * {
 
 #container {
   width: 100%;
-  max-width: 588px;
-  margin: 56px auto 0px;
   padding: 0 24px;
+  margin: 56px auto 0;
+  overflow: auto; /* Добавляем свойство overflow для обеспечения корректного отображения контента, если он выходит за пределы контейнера */
 }
 
 #profile {
